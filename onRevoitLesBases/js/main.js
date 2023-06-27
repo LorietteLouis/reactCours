@@ -1,49 +1,103 @@
-const button = document.querySelector("button");
+// ----------------
+// Fonctions / variables globales (utilisées dans tous les composants)
+// ----------------
 
-button.addEventListener('click',() => {
+// permet de cibler la div avec l'id root créée en HTML
+// ciblage d'un nouveau composant, l'id groot créée en HTML.
+const divRoot = document.querySelector("#root");
+const divGroot = document.querySelector("#groot")
 
-//button : c'est un bouton 
-    const divRoot =  document.querySelector("#root");
-//divRoot : Il défini l'emplacement de l'article pour et autre élément que l'on mettra dans ce divRoot.
-    const articleElement = createNodeElement("article", {class:"article-piscine"});
-    divRoot.appendChild(articleElement);
-
-    divRoot.appendChild(articleElement)
-//article : On crée un élément article qui regroupera les autres éléments.
-   const titleElement = createNodeElement("h1", {   
-       class : "title-piscine"},
-       `La place d'un nageur est dans la piscine !`
-   )
-    articleElement.appendChild(titleElement)
-//titre : premier élément dans l'élément article où on défini la taille de l'élément h1 puit son emplacement.
-    
-    const imgElement = createNodeElement(
-        "img",
-        {
-            class : "img-piscine",
-            src : "https://fr.web.img5.acsta.net/pictures/19/09/24/11/50/3988724.jpg",
-        },
-        ""
-    );
-    articleElement.appendChild(imgElement);
-//image dimension réajusté sur css: l'image est placé dans une zone vide "".
-    const textElement = createNodeElement("p",{class:"text-piscine",},`Jean-Paul et Marianne forment un couple idéal et coulent des jours heureux dans leur villa de Saint-Tropez, jusqu'au jour où arrive Harry, au bras de sa fille l'incendiaire Pénélope. Ancien amant de Marianne, l'homme trouble cette vie tranquille. La tension monte.`)
-    articleElement.appendChild(textElement)
-//texte de l'article: même principe que le titre mais à la place de h1 c'est p.
-
-})
+// fonction générique permettant de créer un tag HTML (un node du DOM)
+// en précisant son type (div, p, h2 etc), ses attributs et son texte
 const createNodeElement = (tagType, attributes, text = "") => {
-    const nodeElement = document.createElement(tagType);
-  
-    // on fait une boucle sur l'objet attributes
-    // et pour chaque propriété trouvée (class, src etc)
-    // on ajoute un attribut avec en type le nom de la propriété et en valeur sa valeur
-    for (const property in attributes) {
-      nodeElement.setAttribute(property, attributes[property]);
-    }
-  
-    nodeElement.textContent = text;
-  
-    return nodeElement;
-  };
+  const nodeElement = document.createElement(tagType);
 
+  for (const property in attributes) {
+    nodeElement.setAttribute(property, attributes[property]);
+  }
+
+  nodeElement.textContent = text;
+
+  return nodeElement;
+};
+
+// ----------------
+// Composants permettant de créer le contenu de notre site
+// ----------------
+
+// fonction qui permet de créer le formulaire de contact
+// et de gérer sa logique (envoie des données au submit si besoin etc)
+const contactFormComponent = () => {
+  const formElement = createNodeElement("form");
+
+  const inputTextElement = createNodeElement("input", {
+    type: "text",
+    class: "contact-text",
+  });
+  formElement.appendChild(inputTextElement);
+
+  const submitBtnElement = createNodeElement(
+    "button",
+    {
+      type: "submit",
+      class: "contact-submit",
+    },
+    "Valider"
+  );
+  formElement.appendChild(submitBtnElement);
+
+  divRoot.appendChild(formElement);
+};
+
+// appel de la fonction permettant de créer le formulaire de contact
+contactFormComponent();
+
+// création de la fonction pour afficher la liste de recettes
+// fait un appel vers l'api pour récupérer les données
+// créer le HTML pour afficher les données (recettes de cuisines)
+const mealsListComponent = async () => {
+  const responseJson = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s");
+  const responseJavascript = await responseJson.json();
+
+  responseJavascript.meals.forEach((meal) => {
+    const mealTitleElement = createNodeElement(
+      "h2",
+      {
+        class: "meal-title",
+      },
+      meal.strMeal
+    );
+    divRoot.appendChild(mealTitleElement);
+
+    const mealImgElement = createNodeElement("img", {
+      src: meal.strMealThumb,
+    });
+    divRoot.appendChild(mealImgElement);
+  });
+};
+
+// appel de la fonction qui permet de créer la liste des recettes de cuisine
+mealsListComponent();
+//-----------------------------------------------------------------------------
+const mealsListCategories = async () => {
+  const responseJson = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+  const responseJavascript = await responseJson.json();
+//fait appel de donnée API dit "catégories", ainsi que la création d'HTML pour afficher c'est dites données 
+  responseJavascript.categories.forEach((category) => {
+    const mealCategoryElement = createNodeElement(
+      "h2",
+      {
+        class: "meal-categories",
+      },
+      category.strCategory
+    );
+    divGroot.appendChild(mealCategoryElement);
+
+    const categoriesImgElement = createNodeElement("img", {
+      src: category.strCategoryThumb,
+    });
+    divGroot.appendChild(categoriesImgElement);
+  });
+};
+//fonction permet de créer une liste de catégorie
+mealsListCategories()
