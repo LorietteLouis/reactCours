@@ -84,6 +84,7 @@ const mealsListCategories = async () => {
   const responseJavascript = await responseJson.json();
 //fait appel de donnée API dit "catégories", ainsi que la création d'HTML pour afficher c'est dites données 
   responseJavascript.categories.forEach((category) => {
+//Alors c'est un for mais qui boucle dans un élément objet.
     const mealCategoryElement = createNodeElement(
       "h2",
       {
