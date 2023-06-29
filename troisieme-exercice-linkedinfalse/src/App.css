@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: rgb(31,3,249);
+  background: linear-gradient(94deg, rgba(31,3,249,1) 0%, rgba(4,21,250,1) 47%, rgba(5,213,247,1) 100%);
+  display: flex;
+  justify-content: center;
+
+}
+.header img{
+  height: 10vh;
+  border-radius: 50%;
+}
+
+.footer {
+  background: rgb(31,3,249);
+  background: linear-gradient(194deg, rgba(31,3,249,1) 0%, rgba(4,21,250,1) 47%, rgba(5,213,247,1) 100%);
+  color: white;
+  display: flex ;
+  justify-content: center;
+  padding: 64px;
+}
+
+.profile{
+  padding: 50px;
+}
+.experience{
+  padding: 50px;
+}
+li{
+  list-style-type: none;
+}
+.main{
+  display: flex;
+  justify-content: space-around;
+}
+
+.postFeed img{
+  height: 25vh;
+  width: 20vw;
+}
+
+.postFeedFromJob{
+  display: flex;
+  justify-content: space-around;
+}

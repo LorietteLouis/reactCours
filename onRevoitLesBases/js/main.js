@@ -86,7 +86,7 @@ const mealsListCategories = async () => {
   responseJavascript.categories.forEach((category) => {
 //Alors c'est un for mais qui boucle dans un élément objet.
     const mealCategoryElement = createNodeElement(
-      "h2",
+      "h3",
       {
         class: "meal-categories",
       },

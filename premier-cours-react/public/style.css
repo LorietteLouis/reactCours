@@ -1,0 +1,27 @@
+body{
+    background: radial-gradient(circle, rgba(51,51,51,1) 0%, rgba(29,19,19,1) 100%);
+    color: white
+}
+
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 30vh 45vw 25vh 30vw ;
+    border-radius: 15px;
+    border: 1px solid cyan
+
+
+}
+
+.container-fluid-article{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 50px;
+
+}
