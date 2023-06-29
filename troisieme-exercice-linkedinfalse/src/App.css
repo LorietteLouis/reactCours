@@ -25,10 +25,22 @@ body {
 }
 
 .profile{
-  padding: 50px;
+  margin: 150px 0;
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 3px 2px 5px;
 }
 .experience{
   padding: 50px;
+}
+.experience h1 {
+  background-color: #84d6eb;
+}
+.experience h1:after{
+  content: "_______________________";
+  color: #84d6eb;
+  
+  z-index: 0;
 }
 li{
   list-style-type: none;
