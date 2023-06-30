@@ -6,13 +6,25 @@ body {
 .header {
   background: rgb(31,3,249);
   background: linear-gradient(94deg, rgba(31,3,249,1) 0%, rgba(4,21,250,1) 47%, rgba(5,213,247,1) 100%);
+
+}
+.header-top{
   display: flex;
   justify-content: center;
-
 }
 .header img{
   height: 10vh;
   border-radius: 50%;
+}
+.header-top ul{
+  display: flex;
+  justify-content: space-between;
+}
+.header-top li{
+  margin: 15px 0;
+  padding: 0 15px ;
+  color : white;
+  cursor: pointer;
 }
 
 .footer {

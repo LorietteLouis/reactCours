@@ -66,8 +66,8 @@ return(
         <div className="boxComment">
           <h3>Post : {element.title}</h3>
           <ul>
-            <li>{element.description}</li>
             <li><img src={element.image} alt={element.title} /></li>
+            <li>{element.description}</li>
           </ul>
           <p>publié le : {date.toDateString()} par : {element.author.lastName} {element.author.firstName}</p>
         </div>

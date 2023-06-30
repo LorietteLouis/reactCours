@@ -6,14 +6,27 @@ import PostFeed from './Feed';
 import './App.css';
 
 function App() {
+const userInfosFromFakeApi = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 42,
+  email: "contact@johndoe.fr",
+  phone: "0123456789",
+  adress: "1 rue de la Paix",
+  city: "Paris",
+  zipCode: "75000",
+  country: "France",
+  job: "Développeur web",
+};
+
   return (
-    <div className="app">
+    <>
           <div className='header'>
-            <Header/>
+            <Header userInfosFromFakeApi = {userInfosFromFakeApi}/>
           </div>
     <div className = 'main'>
         <div className='profile'>
-          <Profile/>
+          <Profile userInfosFromFakeApi = {userInfosFromFakeApi}/>
         </div>
         <div className='experience'>
           <ExperienceJob/>
@@ -25,8 +38,7 @@ function App() {
       <div className='footer'>
         <Footer/>
       </div>
-    </div>
+    </>
   );
 }
-
 export default App;

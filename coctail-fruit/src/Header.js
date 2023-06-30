@@ -1,16 +1,17 @@
-const Header = ({userInfosFromFakeApi}) => {
+const Header = ({userFromApi}) => {
     return (
       <header className="header-top">
         <img className="header-top-logo"
-          src="https://soyhuce.fr/content/uploads/2020/06/data-large.jpg"
+          src="https://dcassetcdn.com/design_img/3995631/1112756/28196124/fyghpyqwhf0gdfn9rh3ztq2yx1_thumbnail.png"
           alt="Docplanner Group"
         />
+        <h1>Sugar & Sol</h1>
      <ul>
         <li>Home</li>
         <li>Contact</li>
-        <li>About</li>
+        <li>Cocktail Menu</li>
         <li>
-          Connecté en tant que {userInfosFromFakeApi.firstName} {userInfosFromFakeApi.lastName}
+          Hello, {userFromApi.firstName} {userFromApi.lastName}
         </li>
       </ul>
     </header>
