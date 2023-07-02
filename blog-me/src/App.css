@@ -1,0 +1,82 @@
+body{
+  padding: 0;
+  margin: 0;
+
+}
+p , h3 , h4{
+  color: white;
+}
+h2{
+  text-align: center;
+}
+/* --------------------------------------BODY--------------------------------------- */
+img{
+  width: 6vw;
+}
+
+.iconebasket{
+  width: 2vw;
+}
+
+.header-top{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 10px 1px 10px;
+}
+
+li{
+  list-style-type: none;
+  padding: 20px;
+}
+
+.navEcommerce ul{
+  display: flex;
+  align-items: center;
+}
+
+/* --------------------------------------HEADER--------------------------------------- */
+
+.lastArticle-css , .articleList-css{
+  padding: 15px;
+  background-color: #ff3f5b;
+  margin: 50px auto;
+  width: 950px;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.myAside{
+   padding: 15px;
+  background-color: #ff3f5b;
+  margin: 50px auto;
+  width: 350px;
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.myAside li{
+  text-align: end;
+}
+
+.myAside h3{
+  text-align: end;
+}
+
+.myAside h4{
+  text-align: end;
+}
+
+/* --------------------------------------MAIN--------------------------------------- */
+
+.eComFooter{
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+/* --------------------------------------FOOTER--------------------------------------- */

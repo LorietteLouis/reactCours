@@ -3,7 +3,7 @@ import SingleCocktail from "./SingleCocktail";
 const LastCocktail = ({ publishedCocktails }) => {
   return (
       
-    <div class="latestCock">
+    <div className="latestCock">
       {publishedCocktails.map(
         (cocktailContent, index) =>
           index >= publishedCocktails.length - 3 && (
