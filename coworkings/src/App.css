@@ -28,7 +28,7 @@ li{
 }
 
 
-.AllPlaces{
+.coworkeAll{
     display: flex;
     justify-content: space-around;
 }
@@ -49,5 +49,9 @@ h2{
 Footer{
     background-color: rgb(230, 230, 230);
 
+}
+
+.btn{
+  padding: 20px;
 }
 
