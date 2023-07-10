@@ -1,12 +1,15 @@
-import CoworkingObject from "./CoworkingObject";
+import CoworkingShow from "./CoworkingShow";
 
 const RatingCoworking = ({coworkingsFromFakeApi}) =>{
     return(
-        <div className="AllPlaces">
+        <div className="RatingPlaces">
             <h2>Les coworking les plus avancés.</h2>
-            {coworkingsFromFakeApi.map(object => object.rating >=4 &&(
-                <CoworkingObject object={object}/>
+            <div className ="ratingCss">
+            {coworkingsFromFakeApi.map(coworking => coworking.rating >=4 &&(
+                <CoworkingShow coworking={coworking}/>
+            
             ))}
+            </div>
         </div>
     )
 }

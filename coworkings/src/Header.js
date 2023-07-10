@@ -2,7 +2,7 @@ const Header = () => {
 
   
     return (
-    <header>    
+    <header className = "header">    
       <div className = "logo">
         <img src="https://coworkingmap.org/wp-content/uploads/2015/09/coworking-logo.jpg.jpg"/>
       </div>

@@ -1,10 +1,11 @@
-import CoworkingObject from "./CoworkingObject";
+
+import CoworkingShow from "./CoworkingShow";
 
 const AllCoworkings = ({coworkingsFromFakeApi}) =>{
     return(
         <div className="AllPlaces">
-            {coworkingsFromFakeApi.map(object =>(
-                <CoworkingObject object={object}/>
+            {coworkingsFromFakeApi.map(coworking =>(
+                <CoworkingShow coworking={coworking}/>
             ))}
         </div>
     )
