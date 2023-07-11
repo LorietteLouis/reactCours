@@ -22,20 +22,16 @@ const CreateOtherJob = () =>{
         <form onSubmit={handleSubmit}>
         <label>Nom du Job :</label>
         <input type="text" name="nameJob" />
-        <button type="submit">Créer</button>
-        </form>
+        
 
-        <form onSubmit={handleSubmit}>
+    
         <label>Description :</label>
         <textarea name="description" cols="50" rows="5"></textarea>
-        <button type="submit">Créer</button>
-        </form>
-
-        <form onSubmit={handleSubmit}>
+        
         <label>Adresse :</label>
         <input type="text" name="address" />
 
-        <button type="submit">Créer</button>
+        <button type="submit">Submit</button>
         </form>
         <div>
             <h2>Les informations envoyé</h2>
