@@ -5,12 +5,12 @@ const CreateJob = () =>{
     event.preventDefault();
 
 
-    const title = event.target.title.value;
+    const nameJob = event.target.nameJob.value;
     const description = event.target.description.value;
     const address = event.target.address.value;
 
 
-    console.log(title+` `+description+` `+address);
+    console.log(nameJob+` `+description+` `+address);
 
     };
 
@@ -18,7 +18,7 @@ const CreateJob = () =>{
 
     <form onSubmit={handleSubmit}>
     <label>Nom du Job :</label>
-    <input type="text" name="title" />
+    <input type="text" name="nameJob" />
 
     <label>Description :</label>
     <textarea name="description" cols="50" rows="5"></textarea>
