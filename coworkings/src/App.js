@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import AllCoworkings from './Allcoworkings';
 import RatingCoworking from './RatingCoworking';
+import Welcome from './Welcome';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
     <div className="App">
       <Header/>
         <div className="Main">
+          <Welcome/>
           <AllCoworkings coworkingsFromFakeApi={coworkingsFromFakeApi}/>
           <RatingCoworking coworkingsFromFakeApi={coworkingsFromFakeApi}/>
         </div>

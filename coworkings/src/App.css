@@ -12,7 +12,10 @@
 .logo img{
   height: 12vh;
 
+
+
 }
+
 .header ul{
   display: flex;
   justify-content: space-between;
@@ -27,7 +30,9 @@ li{
   list-style-type: none;
 }
 
-
+h1{
+  text-align: center;
+}
 .coworkeAll{
     display: flex;
     justify-content: space-around;
