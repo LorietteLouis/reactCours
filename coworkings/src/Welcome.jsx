@@ -15,7 +15,7 @@ const Welcome = () => {
         </div>
         )}
         <div className= "btn">   
-            <button onClick={handleClick}>Thank you very much!</button>
+            <p onClick={handleClick}> Thank you very much !</p>
         </div>
         </>
     );
