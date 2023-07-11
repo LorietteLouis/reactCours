@@ -22,26 +22,26 @@ const CreateJob = () =>{
 
     return(
       <>
-      <form onSubmit={handleSubmit}>
-      <label>Nom du Job :</label>
-      <input type="text" name="nameJob" />
+        <form onSubmit={handleSubmit}>
+        <label>Nom du Job :</label>
+        <input type="text" name="nameJob" />
 
-      <label>Description :</label>
-      <textarea name="description" cols="50" rows="5"></textarea>
+        <label>Description :</label>
+        <textarea name="description" cols="50" rows="5"></textarea>
 
-      <label>Adresse :</label>
-      <input type="text" name="address" />
+        <label>Adresse :</label>
+        <input type="text" name="address" />
 
-      <button type="submit">Submit</button>
-      </form>
-      <div>
-        <h2>Les informations envoyé</h2>
-        <ul>
-          <li>Le metier rechercher : {sendCreate.nameJob}</li>
-          <li>La description :{sendCreate.description}</li>
-          <li>Votre adresse :{sendCreate.address}</li>
-        </ul>
-      </div>
+        <button type="submit">Submit</button>
+        </form>
+        <div>
+          <h2>Les informations envoyé</h2>
+          <ul>
+            <li>Le metier rechercher : {sendCreate.nameJob}</li>
+            <li>La description :{sendCreate.description}</li>
+            <li>Votre adresse :{sendCreate.address}</li>
+          </ul>
+        </div>
 
       </>
     );

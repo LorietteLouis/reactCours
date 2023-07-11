@@ -19,25 +19,32 @@ const CreateOtherJob = () =>{
 
     return(
       <>
-      <form onSubmit={handleSubmit}>
-      <label>Nom du Job :</label>
-      <input type="text" name="nameJob" />
+        <form onSubmit={handleSubmit}>
+        <label>Nom du Job :</label>
+        <input type="text" name="nameJob" />
+        <button type="submit">Créer</button>
+        </form>
 
-      <label>Description :</label>
-      <textarea name="description" cols="50" rows="5"></textarea>
+        <form onSubmit={handleSubmit}>
+        <label>Description :</label>
+        <textarea name="description" cols="50" rows="5"></textarea>
+        <button type="submit">Créer</button>
+        </form>
 
-      <label>Adresse :</label>
-      <input type="text" name="address" />
+        <form onSubmit={handleSubmit}>
+        <label>Adresse :</label>
+        <input type="text" name="address" />
 
-      <button type="submit">Créer</button>
-      </form>
-      <div>
-        <ul>
-          <li>Le metier rechercher : {nameJob}</li>
-          <li>La description :{description}</li>
-          <li>Votre adresse :{address}</li>
-        </ul>
-      </div>
+        <button type="submit">Créer</button>
+        </form>
+        <div>
+            <h2>Les informations envoyé</h2>
+            <ul>
+                <li>Le metier rechercher : {nameJob}</li>
+                <li>La description :{description}</li>
+                <li>Votre adresse :{address}</li>
+            </ul>
+        </div>
 
       </>
     );
