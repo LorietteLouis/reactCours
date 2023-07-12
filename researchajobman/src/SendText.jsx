@@ -38,9 +38,13 @@ const SendText = () => {
                 <textarea id="text" cols="50" rows="10"></textarea>
                 <button type="submit">Envoyer</button>
             </form>
-            <p>
-                Merci {textData.firstName} {textData.lastName} la galxie te le revaudra.
-            </p>
+            <div className="textSend">
+                { (textData.firstName !== "" || textData.firstName === null) && (
+                <p>
+                    Merci {textData.firstName} {textData.lastName} la galxie te le revaudra.
+                </p>
+                )}
+            </div>
         </>
     )
     }
