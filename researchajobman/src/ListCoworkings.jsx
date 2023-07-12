@@ -6,13 +6,15 @@ const ListCoworkings = () => {
     
   const fetchCoworkings = async () => {
     if (coworkings.length === 0) {
+      setTimeout (async () => {
       const coworkingsResponse = await fetch("/coworkings.json");
       const coworkingsData = await coworkingsResponse.json();
 
 
 
       setCoworkings(coworkingsData);
-    }
+    },1500)
+    };
   };
   fetchCoworkings();
 
@@ -63,9 +65,15 @@ const ListCoworkings = () => {
             <button onClick={handleFilterClickTalence}>Talence</button>
             <button onClick={handleFilterClickVillenave}>Villenave</button>
 
-            {filteredCoworkings.map((coworking) => (
-              <ShowCoworking coworking={coworking}/>
-            ))}
+            {filteredCoworkings.length === 0 ? (
+              <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            ) : (
+              <>
+                {filteredCoworkings.map((coworking) => {
+                    return  <ShowCoworking coworking={coworking}/>
+                })}
+              </>
+            )}
     </section>
   );
 };
