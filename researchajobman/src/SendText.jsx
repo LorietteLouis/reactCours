@@ -39,7 +39,7 @@ const SendText = () => {
                 <button type="submit">Envoyer</button>
             </form>
             <div className="textSend">
-                { (textData.firstName !== "" || textData.firstName === null) && (
+                { (textData.firstName !== "" && textData.firstName !== "" && textData.email !== "" && textData.date !== "" && textData.text !== "") && (
                 <p>
                     Merci {textData.firstName} {textData.lastName} la galxie te le revaudra.
                 </p>
