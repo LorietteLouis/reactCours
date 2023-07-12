@@ -53,6 +53,7 @@ const ListCoworkingsOptimized = () => {
               <>
                 {filteredCoworkings.map((coworking) => {
                     return  <ShowCoworking coworking={coworking}/>
+                    
                 })}
               </>
             )}
