@@ -1,8 +1,20 @@
 import { useState } from "react";
 import ShowCoworking from "./ShowCoworking"
-const ListCoworkingsOptimized = ({coworkings}) => {
+const ListCoworkingsOptimized = () => {
+
+  const [coworkings, setCoworkings] = useState([]);
     
-    
+  const fetchCoworkings = async () => {
+    if (coworkings.length === 0) {
+      const coworkingsResponse = await fetch("/coworkings.json");
+      const coworkingsData = await coworkingsResponse.json();
+
+
+
+      setCoworkings(coworkingsData);
+    }
+  };
+  fetchCoworkings();
 
       
       const [filter, setFilter] = useState("Bordeaux");
