@@ -17,6 +17,7 @@ const AllCoworkings = ({coworkingsFromFakeApi}) =>{
             <div className="coworkeAll">
             {coworkingsFromFakeApi.map(coworking =>(
                 <CoworkingShow coworking={coworking}/>
+                
 
             ))}
             </div>
