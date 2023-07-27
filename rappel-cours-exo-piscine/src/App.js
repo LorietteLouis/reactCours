@@ -2,10 +2,10 @@
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import Main from './Main';
+// import Main from './Main';
 // import MealsList from './MealList';
 // import RandomMeal from './RandomMeal';
-import SearchMeal from './SearchMeal';
+// import SearchMeal from './SearchMeal';
 import ListCategories from './ListCategories';
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
      {/* <MealsList/>
      <RandomMeal/> */}
      <ListCategories/>
-     <SearchMeal/>
-      <Main/>
+     {/* <SearchMeal/> */}
+      {/* <Main/> */}
      <Footer/>
     </>
   );
