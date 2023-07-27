@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color : white;
+  }
+  
+  Header {
+    background: orange;
+    background: linear-gradient(180deg, orange 0%, orangered 47%, black 100%);
+  
+  }
+  .header-top{
+    display: flex;
+    justify-content: space-around;
+  }
+  img{
+    height: 10vh;
+    border-radius: 50%;
+  
+  }
+  .header-top ul{
+    display: flex;
+    justify-content: space-between;
+  }
+  .header-top li{
+    margin: 15px 0;
+    padding: 0 15px ;
+    cursor: pointer;
+  }
+  
+  li{
+    list-style-type: none;
+  }
+  
+  .footer-de-nerf{
+    background-color: orange;
+    margin: 0;
+    padding: 10px;
+    
+  }
+  
+  .footer-top-logo{
+    height: 10vh;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .randomCoctail{
+    padding: 20px;
+    background: orange;
+    background: linear-gradient(0deg, rgb(255, 94, 0) 0%, rgb(230, 0, 57) 47%, black 100%);
+    width: 300px;
+    margin: 70px auto;
+    border-radius: 15px;
+  
+  }
+  
+  
+ 
+
+  
+  
+  .listCoctail{
+    margin: 50px auto;
+    width: 350px;
+    background: orange;
+    background: linear-gradient(0deg, rgb(255, 94, 0) 0%, rgb(230, 0, 57) 47%, black 100%);
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .rhumYes{
+    margin: 50px auto;
+    width: 350px;
+    background: orange;
+    background: linear-gradient(0deg, rgb(255, 94, 0) 0%, rgb(230, 0, 57) 47%, black 100%);
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .allCocktails{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  
+  .horraire{
+    display: flex;
+    justify-content: space-around;
+  }
