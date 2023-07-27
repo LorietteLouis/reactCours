@@ -7,6 +7,7 @@ import Footer from './Footer';
 // import RandomMeal from './RandomMeal';
 // import SearchMeal from './SearchMeal';
 import ListCategories from './ListCategories';
+import MealByCategories from './ListCategories';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
      {/* <MealsList/>
      <RandomMeal/> */}
      <ListCategories/>
+     <MealByCategories/>
      {/* <SearchMeal/> */}
       {/* <Main/> */}
      <Footer/>

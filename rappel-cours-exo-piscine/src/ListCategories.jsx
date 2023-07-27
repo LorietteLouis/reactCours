@@ -1,55 +1,49 @@
-import{useEffect, useState} from "react"
+import { useEffect, useState } from "react";
+import MealListByCategory from "./MealListByCategory";
+
 const ListCategories = () => {
-    const [categories, setCategories] = useState([]);
-    const [mealsByCategory, setMealsByCategory] = useState([])
-    //useState renvoie une paire de valeurs : l’état actuel et une fonction pour le modifier.
-    // Dans notre cas mealsByCategory et setMealsByCategory.
-    const fetchCategories = async ( )=>{
-        const categoriesResponse = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
-        const categoriesJs = await categoriesResponse.json();
+  const [categories, setCategories] = useState([]);
+  const [mealsByCategory, setMealsByCategory] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-        setCategories(categoriesJs.categories);
-    };
-    useEffect(()=>{
-        fetchCategories()
-    },[])
-    //useEffect fait indiquera à react les données "dans notre cas une api de catégorie de Plât" qu'il doit faire appel dans un utilisateur vide "[]"
-    //A chaque Màj "ou raffrechissement" useEffect donnera les nouvelles données.
+  const fetchCategories = async () => {
+    const categoriesResponse = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+    const categoriesJs = await categoriesResponse.json();
 
-    const handleCategoryClick = async (titleCategory) => {
-    
-        const responseMeals = await fetch (`https://www.themealdb.com/api/json/v1/1/filter.php?c=${titleCategory}`)
-        const mealsJs = await responseMeals.json()
+    setCategories(categoriesJs.categories);
+  };
 
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
-        setMealsByCategory(mealsJs.meals)
-    }
-    return(
-    <>
-                <h2>Categories</h2>
+  const handleCategoryClick = async (categoryTitle) => {
+    setIsLoading(true);
 
-                <>
-                    <p>Recettes pour la catégorie sélectionnée :</p>
-                    {mealsByCategory.map((meal) => {
-                    return (
-                        <div key={meal.idMeal}>
-                            <h3>{meal.strMeal}</h3>
-                            <img src={meal.strMealThumb} alt={meal.strMealThumb} />
-                        </div>
-                    );
-                    })}
-                </>
-            {categories.map((category)=>{
-                return (
-            <div key={category.idCategory}>
-                <h3>{category.strCategory}</h3>
-                <img src={category.strCategoryThumb} alt={category.strCategory} />
-                <p>{category.strCategoryDescription}</p>
-                <button onClick={() => handleCategoryClick(category.strCategory)}>Afficher toutes les recettes</button>
-            </div>
+    const mealsByCategoryResponse = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryTitle}`
+    );
+    const mealsByCategoryJs = await mealsByCategoryResponse.json();
+    setMealsByCategory(mealsByCategoryJs.meals);
+
+    setIsLoading(false);
+  };
+
+  return (
+    <div>
+      <MealListByCategory isLoading={isLoading} mealsByCategory={mealsByCategory} />
+      {categories.map((category) => {
+        return (
+          <div key={category.idCategory}>
+            <h3>{category.strCategory}</h3>
+            <img src={category.strCategoryThumb} alt={category.strCategory} />
+            <p>{category.strCategoryDescription}</p>
+            <button onClick={() => handleCategoryClick(category.strCategory)}>Afficher les recettes reliées</button>
+          </div>
         );
       })}
-    </>
-    )
-}
+    </div>
+  );
+};
+
 export default ListCategories;
