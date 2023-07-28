@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
-const RandomCoctail = () => {
+const RandomCocktailPage = () => {
   const [randomCoctail, setRandomCoctail] = useState(null);
  // Elle renvoie une paire de valeurs : l’état actuel et une fonction pour le modifier.
 
@@ -17,6 +19,8 @@ const RandomCoctail = () => {
   }, []);
   //On utilise useEffect pour indiquer à React que notre composant doit êtres exécuter après chaque affichage. React enregistre la fonction passée en argument 
   return(
+    <>
+    <Header/>
     <div className="randomCoctail">
     <h1>Cocktail du Moment</h1>
 
@@ -31,7 +35,9 @@ const RandomCoctail = () => {
     <button onClick={fetchRandomCoctails}>Changer le cocktail</button>
     {/* Le bouton à pour instruction via onClick de changer de cocktail aléatoirement à chaque fois qu'on clique. */}
     </div>
+    <Footer/>
+    </>
   )
 };
 
-export default RandomCoctail;
+export default RandomCocktailPage;
