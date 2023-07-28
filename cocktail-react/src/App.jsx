@@ -4,6 +4,7 @@ import HomePage from "./page/HomePage";
 import ListCocktailPage from "./page/ListCocktailPage";
 import RandomCocktailPage from "./page/RandomCocktailPage";
 import SearchResultsPage from "./page/SearchResultsPage";
+import ShowCocktailPage from "./page/ShowCocktailPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cocktails" element={<ListCocktailPage />} />
+        <Route path="/cocktails/show/:id" element={<ShowCocktailPage />} />
         <Route path="/cocktails/random" element={<RandomCocktailPage />} />
         <Route path="/search-results" element={<SearchResultsPage/>}/>
       </Routes>

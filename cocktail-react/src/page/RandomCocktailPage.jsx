@@ -1,39 +1,41 @@
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { Link } from "react-router-dom";
 
 const RandomCocktailPage = () => {
-  const [randomCoctail, setRandomCoctail] = useState(null);
+  const [randomCocktail, setRandomCocktail] = useState(null);
  // Elle renvoie une paire de valeurs : l’état actuel et une fonction pour le modifier.
 
-  const fetchRandomCoctails = async () => {
+  const fetchRandomCocktails = async () => {
     const responseApi = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php");
     const responseJson = await responseApi.json();
 
-    setRandomCoctail(responseJson.drinks[0]);
+    setRandomCocktail(responseJson.drinks[0]);
     //On immobilise que le premier responseJson qui fait appel à la responseApi. 
   };
 
   useEffect(() => {
-    fetchRandomCoctails();
+    fetchRandomCocktails();
   }, []);
   //On utilise useEffect pour indiquer à React que notre composant doit êtres exécuter après chaque affichage. React enregistre la fonction passée en argument 
   return(
     <>
     <Header/>
-    <div className="randomCoctail">
+    <div className="randomCocktail">
     <h1>Cocktail du Moment</h1>
 
-    {randomCoctail === null && <p>Loading...</p>}
+    {randomCocktail === null && <p>Loading...</p>}
 
-    {randomCoctail !== null && (
+    {randomCocktail !== null && (
         <div>
-        <p>{randomCoctail.strDrink}</p>
-        <img src={randomCoctail.strDrinkThumb} alt={randomCoctail.strDrink} />
+        <p>{randomCocktail.strDrink}</p>
+        <img src={randomCocktail.strDrinkThumb} alt={randomCocktail.strDrink} />
         </div>
     )}
-    <button onClick={fetchRandomCoctails}>Changer le cocktail</button>
+    <button onClick={fetchRandomCocktails}>Changer le cocktail</button>
     {/* Le bouton à pour instruction via onClick de changer de cocktail aléatoirement à chaque fois qu'on clique. */}
+    <Link to={"/cocktails/show/" + randomCocktail.idDrink}><button>Voir +</button></Link>
     </div>
     <Footer/>
     </>
